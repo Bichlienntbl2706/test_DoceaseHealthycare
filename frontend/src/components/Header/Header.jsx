@@ -48,6 +48,8 @@ const Header = () => {
 
   const toggleMenu = () => menuRef.current.classList.toggle('show_menu')
 
+  // const location = useLocation()
+
   return (
     <header>
       <div className="header flex items-center" ref={headerRef}>
@@ -96,7 +98,7 @@ const Header = () => {
                 {/* <Link to="/profile">
                     <div className='d-flex items-center justify-center'>
                       <img src={userImg} alt="avt" />
-                      <p className='ml-2'>Edogaru</p>
+                      <p className='ml-2'>{location.state.id}</p>
                     </div>
                 </Link> */}
 

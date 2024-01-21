@@ -1,9 +1,10 @@
 import React from 'react'
 import './App.css'
 import Layout from './layout/layout'
-// import Axios from 'axios'
-function App() {
 
+
+function App() {
+   
   return (
     <Layout/>
   )

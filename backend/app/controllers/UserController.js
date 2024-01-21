@@ -32,7 +32,6 @@ class UserController {
              }
            
         } catch (error) {
-            
             console.error('Error inserting user:', error);
             next(error);
         }
@@ -41,9 +40,9 @@ class UserController {
     //[POST] /users/login
     async login(req, res, next) {
         try {
-            const { email, password } = req.body;
+            const { emails, password } = req.body;
 
-           const check =  await User.findOne({email: email, password: password});
+           const check =  await User.findOne({email: emails, password: password});
             
            if(check){
                 res.json("exist");

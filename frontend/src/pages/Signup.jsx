@@ -14,8 +14,8 @@ const Signup = () => {
     const [errors, setErrors] = useState({})
     const history = useNavigate();
 
-    // let handleSubmit = async (e) =>{
-    async function handleSubmit(e){    
+    let handleSubmit = async (e) =>{
+    // async function handleSubmit(e){    
           try {
             e.preventDefault();
 
@@ -24,36 +24,7 @@ const Signup = () => {
               email:email,
               password:password
             }));
-            // if(name == "" && password == "" && email== ""){
-            //     setErrors(Validation({
-            //         name: name,
-            //         email:email,
-            //         password:password
-            //       }));
-            // }
-            // else if(name == "" && password == "" ){
-            //     setErrors(Validation({
-            //         name: name,
-            //         password:password
-            //       }));
-            // }
-            // else if(name == "" && email== ""){
-            //     setErrors(Validation({
-            //         name: name,
-            //         email:email
-            //       }));
-            // }else if(password == "" && email== ""){
-            //     setErrors(Validation({
-            //         email:email,
-            //         password:password
-            //       }));
-            // }else if(Validation({
-            //     name: name,
-            //     email:email,
-            //     password:password
-            // })){
-                
-            // }
+            
             await axios.post("http://localhost:9000/users/store", {
                     name, email, password
             })
@@ -68,12 +39,11 @@ const Signup = () => {
                 }
               })
               .catch(e =>{
-                  alert("wrong details")
+                  alert("wrong details") 
                   console.log(e)
               })
 
           } catch (e) {
-
             console.log(e);
           }
       }
